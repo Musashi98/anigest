@@ -9,15 +9,15 @@ function MovableSquare() {
     const xPosition = useSharedValue(0);
     const yPosition = useSharedValue(0);
 
-    const touchPosition = useSharedValue({x: 0, y: 0})
+    const touchStartPosition = useSharedValue({x: 0, y: 0})
 
     const squareGestureHandler = useAnimatedGestureHandler({
         onStart: () => {
-            touchPosition.value = {x: xPosition.value, y: yPosition.value}
+            touchStartPosition.value = {x: xPosition.value, y: yPosition.value}
         },
         onActive: (event) => {
-            xPosition.value = touchPosition.value.x + event.translationX
-            yPosition.value = touchPosition.value.y + event.translationY
+            xPosition.value = touchStartPosition.value.x + event.translationX
+            yPosition.value = touchStartPosition.value.y + event.translationY
         },
         onEnd: () => {
             let distanceToCenter = Math.sqrt(xPosition.value * xPosition.value + yPosition.value * yPosition.value)
