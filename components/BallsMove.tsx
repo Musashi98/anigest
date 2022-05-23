@@ -35,21 +35,21 @@ function BallsMove() {
     const greenBallAnimatedStyle = useAnimatedStyle(() => {
         greenBallPosition.value = {x: redBallPosition.value.x, y: redBallPosition.value.y}
         return {
-            transform: [{translateX: withSpring(greenBallPosition.value.x, {mass: 2})}, {translateY: withSpring(greenBallPosition.value.y, {mass: 1.5})}]
+            transform: [{translateX: withSpring(greenBallPosition.value.x, {mass: 1.5})}, {translateY: withSpring(greenBallPosition.value.y, {mass: 1.5})}]
         }
     })
 
     const blueBallAnimatedStyle = useAnimatedStyle(() => {
         blueBallPosition.value = {x: greenBallPosition.value.x, y: greenBallPosition.value.y}
         return {
-            transform: [{translateX: withSpring(blueBallPosition.value.x, {mass: 3})}, {translateY: withSpring(blueBallPosition.value.y, {mass: 2})}]
+            transform: [{translateX: withSpring(blueBallPosition.value.x, {mass: 2})}, {translateY: withSpring(blueBallPosition.value.y, {mass: 2})}]
         }
     })
 
     const yellowBallAnimatedStyle = useAnimatedStyle(() => {
         const yellowBallPosition = {x: greenBallPosition.value.x, y: greenBallPosition.value.y}
         return {
-            transform: [{translateX: withSpring(yellowBallPosition.x, {mass: 4})}, {translateY: withSpring(yellowBallPosition.y, {mass: 2.5})}]
+            transform: [{translateX: withSpring(yellowBallPosition.x, {mass: 2.5})}, {translateY: withSpring(yellowBallPosition.y, {mass: 2.5})}]
         }
     })
 

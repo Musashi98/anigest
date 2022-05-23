@@ -1,8 +1,10 @@
-import { StyleSheet } from "react-native";
+import { Dimensions, StyleSheet } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
 
-const SHAPE_SIDE = 400
+const { width, height } = Dimensions.get('screen');
+
+const SHAPE_SIDE = Math.min(0.6 * width, 0.6 * height);
 
 const shapeStates = [
     {
@@ -31,7 +33,7 @@ const shapeStates = [
     },
 ]
 
-function RotatingTriangle() {
+function RotatingFigures() {
     const shapeIndex = useSharedValue(0)
     const shapeRadius = useSharedValue(20)
     const shapeRotation = useSharedValue(0)
@@ -75,4 +77,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default RotatingTriangle;
+export default RotatingFigures;
